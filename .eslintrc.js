@@ -26,15 +26,25 @@ module.exports = {
       'asc',
       { caseSensitive: true, natural: false, minKeys: 2 },
     ],
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['single', 'all', 'multiple', 'none'],
+        allowSeparatedGroups: false,
+      },
+    ],
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
+        parser: 'typescript',
+        endOfLine: 'auto',
+        printWidth: 80,
+        tabWidth: 2,
+      },
+    ],
   },
-  'sort-imports': [
-    'error',
-    {
-      ignoreCase: false,
-      ignoreDeclarationSort: false,
-      ignoreMemberSort: false,
-      memberSyntaxSortOrder: ['single', 'all', 'multiple', 'none'],
-      allowSeparatedGroups: false,
-    },
-  ],
 };
