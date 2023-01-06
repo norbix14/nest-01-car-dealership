@@ -32,7 +32,7 @@ module.exports = {
         ignoreCase: false,
         ignoreDeclarationSort: false,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['single', 'all', 'multiple', 'none'],
+        memberSyntaxSortOrder: ['single', 'multiple', 'all', 'none'],
         allowSeparatedGroups: false,
       },
     ],
