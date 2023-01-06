@@ -5,28 +5,11 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class CarsService {
-  private cars: Car[] = [
-    {
-      brand: 'Ford',
-      id: uuid(),
-      model: 'Fusion Hybrid',
-    },
-    {
-      brand: 'Tesla',
-      id: uuid(),
-      model: 'Model S',
-    },
-    {
-      brand: 'Toyota',
-      id: uuid(),
-      model: 'Prius',
-    },
-    {
-      brand: 'BMW',
-      id: uuid(),
-      model: 'i3',
-    },
-  ];
+  private cars: Car[] = [];
+
+  public populateCarsWithSeedData(carsSeed: Car[]) {
+    this.cars = carsSeed;
+  }
 
   public findAll(): Car[] {
     return this.cars;
