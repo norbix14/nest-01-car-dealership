@@ -1,16 +1,38 @@
-import { IsObject } from 'class-validator';
+import {
+  IsInt,
+  IsNotEmpty,
+  IsNotEmptyObject,
+  IsOptional,
+  Min,
+} from 'class-validator';
+
+export class BrandsSeed {
+  @IsOptional()
+  readonly brand_names?: string[];
+
+  @IsNotEmpty()
+  @IsInt()
+  @Min(1)
+  readonly records: number;
+}
+
+export class CarsSeed {
+  @IsOptional()
+  readonly brand_names?: string[];
+
+  @IsOptional()
+  readonly car_models?: string[];
+
+  @IsNotEmpty()
+  @IsInt()
+  @Min(1)
+  readonly records: number;
+}
 
 export class CreateSeedDto {
-  @IsObject()
-  cars: {
-    records: number;
-    car_models?: string[];
-    brand_names?: string[];
-  };
+  @IsNotEmptyObject()
+  readonly brands: BrandsSeed;
 
-  @IsObject()
-  brands: {
-    records: number;
-    brand_names?: string[];
-  };
+  @IsNotEmptyObject()
+  readonly cars: CarsSeed;
 }
